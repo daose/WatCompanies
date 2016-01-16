@@ -84,11 +84,11 @@ Time: 	11:30 AM - 1:30 PM
 int main(){
     string line, word, date;
     ifstream ifile;
-    ofstream ofile ("output.csv"); 
+    ofstream ofile ("februaryInfoSessions.csv"); 
     if(ofile.is_open()){
         ofile << "Subject,Start Date,Start Time,End Date,End Time,Location" << endl;
     }
-    ifile.open("parse.txt");
+    ifile.open("parseFeb.txt");
     while(getline(ifile, line)){
         if(line.find("Employer:") != string::npos){
             ofile << extract("Employer:", line) << ",";
